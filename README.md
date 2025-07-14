@@ -25,22 +25,17 @@
 
 ### 📁 目录结构  
 ```bash
-ipxe-netboot-stack-docker/  
-├── docker-compose.yml       # Docker 编排配置  
-├── dhcp/  
-│   └── dhcpd.conf           # DHCP 服务配置文件  
-├── tftp/                	# ipxe引导固件 根目录  
-│   ├── undionly.kpxe    	# iPXE 固件  
-│   └── boot.ipxe        	# iPXE 启动脚本                       
-| ───www/			       # Web 服务根目录
-|    ├──Grub			   # 多系统引导菜单
-|      └─Install
-|       ├─centos
-|       ├─Debian
-|       ├─ESXI
-|       └─Ubuntu
-└── iscsi/                   # iSCSI 存储镜像  
-    └── storage.img          # ESXi/Debian 系统镜像文件  
+├── dhcp
+│   ├── dhcpd.conf
+├── docker-compose.yml
+├── dockerfile
+│   ├── iscsi
+│   │   └── Dockerfile
+│   └── tftp
+│       └── Dockerfile
+├── iscsi
+├── tftp
+└── www
 ```
 
 ---

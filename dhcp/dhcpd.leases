@@ -4,71 +4,6 @@
 # authoring-byte-order entry is generated, DO NOT DELETE
 authoring-byte-order little-endian;
 
-server-duid "\000\001\000\0010\005\034\000\000\014)\004mP";
-
-lease 192.168.1.100 {
-  starts 6 2025/07/12 13:14:56;
-  ends 6 2025/07/12 13:24:56;
-  cltt 6 2025/07/12 13:14:56;
-  binding state active;
-  next binding state free;
-  rewind binding state free;
-  hardware ethernet 00:0c:29:b6:0b:94;
-  set vendor-class-identifier = "PXEClient:Arch:00000:UNDI:002001";
-}
-lease 192.168.1.100 {
-  starts 6 2025/07/12 13:14:59;
-  ends 6 2025/07/12 13:24:59;
-  cltt 6 2025/07/12 13:14:59;
-  binding state active;
-  next binding state free;
-  rewind binding state free;
-  hardware ethernet 00:0c:29:b6:0b:94;
-  uid "\001\000\014)\266\013\224";
-  set vendor-class-identifier = "PXEClient:Arch:00000:UNDI:002001";
-}
-lease 192.168.1.101 {
-  starts 6 2025/07/12 13:19:39;
-  ends 6 2025/07/12 13:29:39;
-  cltt 6 2025/07/12 13:19:39;
-  binding state active;
-  next binding state free;
-  rewind binding state free;
-  hardware ethernet 00:0c:29:b6:0b:94;
-  set vendor-class-identifier = "PXEClient:Arch:00000:UNDI:002001";
-}
-lease 192.168.1.100 {
-  starts 6 2025/07/12 13:19:43;
-  ends 6 2025/07/12 13:29:43;
-  cltt 6 2025/07/12 13:19:43;
-  binding state active;
-  next binding state free;
-  rewind binding state free;
-  hardware ethernet 00:0c:29:b6:0b:94;
-  uid "\001\000\014)\266\013\224";
-  set vendor-class-identifier = "PXEClient:Arch:00000:UNDI:002001";
-}
-lease 192.168.1.101 {
-  starts 6 2025/07/12 13:22:17;
-  ends 6 2025/07/12 13:32:17;
-  cltt 6 2025/07/12 13:22:17;
-  binding state active;
-  next binding state free;
-  rewind binding state free;
-  hardware ethernet 00:0c:29:b6:0b:94;
-  set vendor-class-identifier = "PXEClient:Arch:00000:UNDI:002001";
-}
-lease 192.168.1.100 {
-  starts 6 2025/07/12 13:22:20;
-  ends 6 2025/07/12 13:32:20;
-  cltt 6 2025/07/12 13:22:20;
-  binding state active;
-  next binding state free;
-  rewind binding state free;
-  hardware ethernet 00:0c:29:b6:0b:94;
-  uid "\001\000\014)\266\013\224";
-  set vendor-class-identifier = "PXEClient:Arch:00000:UNDI:002001";
-}
 lease 192.168.1.101 {
   starts 6 2025/07/12 13:22:17;
   ends 6 2025/07/12 13:32:17;
@@ -88,3 +23,5 @@ lease 192.168.1.100 {
   uid "\001\000\014)\266\013\224";
   set vendor-class-identifier = "PXEClient:Arch:00000:UNDI:002001";
 }
+server-duid "\000\001\000\0010\005\034\000\000\014)\004mP";
+

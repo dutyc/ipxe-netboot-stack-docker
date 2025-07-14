@@ -1,6 +1,13 @@
-# docker-compose.yml
+version: '3'
+
+networks:
+  ipxe-docker:
+    driver: bridge
+    ipam:
+      driver: default
 
 services:
+
   ipxe-dhcpd:
     image: wastrachan/dhcpd
     container_name: ipxe-dhcpd
@@ -12,9 +19,12 @@ services:
     restart: unless-stopped
     network_mode: host
 
-  tftp-server:
-    image: tftp-server
-    container_name: tftp-server
+  ipxe-tftp:
+    build:
+      context: ./dockerfile/tftp
+      dockerfile: Dockerfile
+    image: local/tftp
+    container_name: ipxe-tftp
     ports:
       - "69:69/udp"
     volumes:
@@ -23,23 +33,33 @@ services:
       - PUID=0
       - PGID=0
     restart: unless-stopped
-    network_mode: host
+    networks:
+      - ipxe-docker
 
-  iscsi:
-    image: dreamcat4/iscsi
-    run:
-      net: host
-      device:
-        - /dev/ietctl
-      volume:
-        - /home/iscsi/iscsi_img:/iscsi/targets
+  ipxe-iscsi:
+    build:
+      context: ./dockerfile/iscsi
+      dockerfile: Dockerfile
+    image: local/iscsi
+    container_name: ipxe-iscsi
+    privileged: true
+    ports:
+      - "3260:3260"
+    volumes:
+      - /etc/target:/etc/target
+      - /sys:/sys
+      - /dev:/dev
+    restart: unless-stopped
+    networks:
+      - ipxe-docker
 
-  web-server:
+  ipxe-http-server:
     image: nginx:latest
-    container_name: web-server
+    container_name: ipxe-http-server
     ports:
       - "88:80"
     volumes:
       - ./www:/usr/share/nginx/html
     restart: unless-stopped
-    network_mode: host
+    networks:
+      - ipxe-docker
